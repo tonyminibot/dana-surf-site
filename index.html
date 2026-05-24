@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dana Surf Rental — Learn to surf at My Khe Beach, Da Nang</title>
+<meta name="description" content="Learn to surf at My Khe Beach with Dana Surf Rental. Daily lessons + board rentals on Da Nang's main beach. 4.9 stars, 293 Google reviews. From 700,000 VND.">
+<link rel="icon" type="image/png" href="/img/shop-front.jpg">
+
+<meta property="og:title" content="Dana Surf Rental — Learn to surf at My Khe Beach">
+<meta property="og:description" content="Daily surf lessons + board rentals at My Khe Beach, Da Nang. 4.9 stars across 293 Google reviews.">
+<meta property="og:image" content="/img/hero-surf.jpg">
+<meta property="og:type" content="website">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SportsActivityLocation",
+  "name":"Dana Surf Rental",
+  "image":"/img/shop-front.jpg",
+  "url":"https://dana-surf.example",
+  "telephone":"+84833289111",
+  "priceRange":"$$",
+  "address":{"@type":"PostalAddress","streetAddress":"Opposite 268B Võ Nguyên Giáp, Mỹ An","addressLocality":"Sơn Trà, Đà Nẵng","addressCountry":"VN"},
+  "geo":{"@type":"GeoCoordinates","latitude":16.0556873,"longitude":108.2475938},
+  "openingHours":"Mo-Su 07:00-17:00",
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"293"}
+}
+</script>
+
+<style>
+  :root {
+    --ink: #0e1217;
+    --ink-soft: #3a414d;
+    --muted: #6b7280;
+    --line: #e7eaef;
+    --line-soft: #f1f3f6;
+    --bg: #fafbfc;
+    --bg-card: #ffffff;
+    --accent: #0b6cf2;
+    --accent-dark: #0958c9;
+    --warm: #f97316;
+    --warm-soft: #fff4ec;
+    --good: #15875a;
+    --bad: #d63d3d;
+    --shadow: 0 1px 2px rgba(15,18,24,0.05), 0 6px 18px rgba(15,18,24,0.06);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; color: var(--ink); font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Inter, system-ui, sans-serif; line-height: 1.55; font-size: 16px; background: var(--bg); -webkit-font-smoothing: antialiased; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  nav .wrap { max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+  nav .brand { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+  nav .links { display: flex; gap: 26px; font-size: 14px; }
+  nav .links a { color: var(--ink-soft); text-decoration: none; }
+  nav .links a:hover { color: var(--accent); }
+  @media (max-width: 720px) { nav .links { display: none; } }
+  nav .cta { background: var(--ink); color: #fff; text-decoration: none; padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+
+  /* Hero */
+  .hero { position: relative; overflow: hidden; padding: 100px 24px 140px; background: linear-gradient(180deg, #fdfdfd 0%, #f5f7fb 100%); }
+  .hero-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 880px) { .hero { padding: 64px 22px 96px; } .hero-inner { grid-template-columns: 1fr; gap: 36px; } }
+  .hero h1 { font-size: 56px; line-height: 1.04; margin: 0 0 18px; letter-spacing: -0.025em; font-weight: 800; }
+  .hero h1 .accent { color: var(--accent); }
+  @media (max-width: 880px) { .hero h1 { font-size: 40px; } }
+  .hero p.lead { font-size: 19px; color: var(--ink-soft); margin: 0 0 32px; max-width: 540px; }
+  @media (max-width: 880px) { .hero p.lead { font-size: 17px; } }
+  .badge-strip { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; padding: 10px 16px; background: var(--warm-soft); border: 1px solid #fce5cf; border-radius: 999px; width: fit-content; }
+  .badge-strip .stars { color: var(--warm); font-size: 18px; letter-spacing: 1px; }
+  .badge-strip .rating { font-weight: 800; color: var(--warm); font-size: 17px; }
+  .badge-strip .ctx { font-size: 14px; color: #8a4413; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 26px; border-radius: 999px; font-weight: 600; font-size: 16px; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; border: none; cursor: pointer; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 4px 14px rgba(11,108,242,0.30); }
+  .btn-primary:hover { background: var(--accent-dark); box-shadow: 0 6px 20px rgba(11,108,242,0.40); }
+  .btn-ghost { background: var(--bg-card); color: var(--ink); border: 1px solid var(--line); }
+  .hero-img-wrap { position: relative; }
+  .hero-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow); }
+  .price-tag { position: absolute; top: 24px; right: -8px; background: var(--ink); color: #fff; padding: 14px 22px; border-radius: 12px; box-shadow: 0 6px 20px rgba(15,18,24,0.25); }
+  .price-tag .pre { font-size: 11px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+  .price-tag .price { font-size: 22px; font-weight: 800; margin-top: 2px; }
+  .price-tag .price small { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+
+  /* Section */
+  section { padding: 88px 24px; }
+  section.tight { padding: 60px 24px; }
+  .container { max-width: 1120px; margin: 0 auto; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+  .h2 { font-size: 40px; letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 16px; font-weight: 800; }
+  @media (max-width: 880px) { .h2 { font-size: 30px; } section { padding: 64px 22px; } }
+  .sub { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin: 0 0 40px; }
+
+  /* About Thai */
+  .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; }
+  @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .about-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow); }
+  .quote-card { background: var(--bg-card); border-radius: 18px; padding: 24px; box-shadow: var(--shadow); margin-top: 26px; }
+  .quote-card .q { font-size: 17px; font-style: italic; color: var(--ink); margin: 0 0 10px; }
+  .quote-card .who { font-size: 13px; color: var(--muted); }
+
+  /* Pricing tables */
+  .price-section { background: var(--bg-card); }
+  .price-table-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+  @media (max-width: 880px) { .price-table-wrap { grid-template-columns: 1fr; gap: 24px; } }
+  .price-card { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+  .price-card .head { padding: 22px 24px; border-bottom: 1px solid var(--line); }
+  .price-card .head h3 { font-size: 21px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .price-card .head p { font-size: 14px; color: var(--muted); margin: 0; }
+  .price-card table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  .price-card th, .price-card td { padding: 12px 24px; text-align: left; border-bottom: 1px solid var(--line-soft); }
+  .price-card td:last-child, .price-card th:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .price-card tr:last-child td { border-bottom: none; }
+  .price-card .head .pill { display: inline-block; background: var(--warm-soft); color: var(--warm); font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 999px; margin-left: 8px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .price-card .inc { padding: 16px 24px; background: var(--line-soft); font-size: 13px; color: var(--ink-soft); }
+  .price-card .inc b { color: var(--ink); }
+
+  /* Services tiles */
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+  @media (max-width: 880px) { .tiles { grid-template-columns: 1fr 1fr; } }
+  .tile { border-radius: 16px; overflow: hidden; background: var(--bg-card); border: 1px solid var(--line); transition: transform 0.2s; }
+  .tile:hover { transform: translateY(-3px); }
+  .tile img { width: 100%; height: 180px; object-fit: cover; display: block; }
+  .tile .body { padding: 16px 18px; }
+  .tile h4 { font-size: 16px; margin: 0 0 4px; }
+  .tile p { font-size: 13.5px; color: var(--muted); margin: 0; }
+
+  /* Testimonials */
+  .testimonials { background: linear-gradient(180deg, #0e1217 0%, #1a1f2c 100%); color: #f1f3f6; }
+  .testimonials .h2 { color: #fff; }
+  .testimonials .sub { color: #b8bcc7; }
+  .testimonials .eyebrow { color: #ff9a4d; }
+  .t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  @media (max-width: 880px) { .t-grid { grid-template-columns: 1fr; } }
+  .t-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 22px 24px; }
+  .t-card .q { font-size: 16px; color: #f1f3f6; margin: 0 0 12px; line-height: 1.55; }
+  .t-card .who { font-size: 13px; color: #8a92a0; }
+  .t-stars { color: var(--warm); font-size: 14px; letter-spacing: 1px; margin-bottom: 8px; }
+
+  /* Location */
+  .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; margin-top: 24px; }
+  @media (max-width: 880px) { .loc-grid { grid-template-columns: 1fr; } }
+  .loc-map { border-radius: 18px; overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow); }
+  .loc-map iframe { width: 100%; height: 100%; border: 0; }
+  .loc-card { background: var(--bg-card); border-radius: 18px; padding: 28px; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: center; }
+  .loc-card h3 { font-size: 22px; margin: 0 0 12px; }
+  .loc-card p { color: var(--ink-soft); margin: 6px 0; font-size: 15.5px; }
+  .loc-card .row { display: flex; gap: 12px; align-items: flex-start; margin: 14px 0; }
+  .loc-card .row svg { flex-shrink: 0; margin-top: 1px; }
+
+  /* Footer */
+  footer { background: #0e1217; color: #8a92a0; padding: 48px 24px 36px; font-size: 14px; }
+  footer .wrap { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  @media (max-width: 720px) { footer .wrap { grid-template-columns: 1fr; } }
+  footer h4 { color: #fff; font-size: 16px; margin: 0 0 12px; }
+  footer a { color: #b8bcc7; text-decoration: none; }
+  footer a:hover { color: #fff; }
+
+  /* Sticky CTA bar (mobile) */
+  .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(14px); border-top: 1px solid var(--line); padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); display: none; gap: 8px; z-index: 40; }
+  @media (max-width: 720px) { .sticky-cta { display: flex; } body { padding-bottom: 76px; } }
+  .sticky-cta a { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px 8px; border-radius: 12px; font-size: 13px; font-weight: 600; text-decoration: none; }
+  .sticky-cta .call { background: var(--accent); color: #fff; }
+  .sticky-cta .zalo { background: #0068ff; color: #fff; }
+  .sticky-cta .whatsapp { background: #25d366; color: #fff; }
+  .sticky-cta a svg { flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Dana Surf Rental</a>
+    <div class="links">
+      <a href="#lessons">Lessons</a>
+      <a href="#rentals">Rentals</a>
+      <a href="#services">Activities</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#location">Location</a>
+    </div>
+    <a class="cta" href="tel:+84833289111">Call · book</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <div class="badge-strip">
+        <span class="stars">★ ★ ★ ★ ★</span>
+        <span class="rating">4.9</span>
+        <span class="ctx">· 293 Google reviews</span>
+      </div>
+      <h1>Learn to surf at <span class="accent">My Khe Beach</span>, Da Nang.</h1>
+      <p class="lead">Daily lessons + board rentals on Da Nang's main beach since 2018. First-time or seasoned rider, 7 or 70 — Thai and the team get you on a wave.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#lessons">Book a lesson — from 700k VND</a>
+        <a class="btn btn-ghost" href="tel:+84833289111">Call +84 83 328 9111</a>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img class="hero-img" src="img/hero-surf.jpg" alt="A Dana Surf Rental student riding her first wave at My Khe Beach">
+      <div class="price-tag">
+        <div class="pre">Open daily</div>
+        <div class="price">7 AM <small>–</small> 5 PM</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about" style="padding-top: 60px;">
+  <div class="container">
+    <div class="about-grid">
+      <img class="about-img" src="img/thai.jpg" alt="Thai, lead instructor at Dana Surf Rental">
+      <div>
+        <p class="eyebrow">Meet your instructor</p>
+        <h2 class="h2">Thai built Dana on one idea: surfing is for everyone.</h2>
+        <p class="sub">Lead instructor and owner Ngọc Quang Thái has been teaching at My Khe since 2018. Every lesson runs in English and Vietnamese, on Torq soft-tops sized to you, with on-land technique before you ever paddle out. The reviews speak for themselves — and every single one names him or his teammate Tu by name.</p>
+        <div class="quote-card">
+          <p class="q">"The best thing about this rental place is Thai. He is so kind and helpful. They make you feel welcomed and happy from the moment you arrive — such a positive and fun atmosphere for learning."</p>
+          <p class="who">— Google review</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="price-section" id="lessons">
+  <div class="container">
+    <p class="eyebrow">Lessons</p>
+    <h2 class="h2">Pick a class, get on a wave.</h2>
+    <p class="sub">All lessons include a soft-top board, rash guard, on-land technique training (paddling + pop-up), wave + tide reading, and an ocean safety briefing. Open daily 7 AM – 5 PM.</p>
+
+    <div class="price-table-wrap">
+      <div class="price-card">
+        <div class="head">
+          <h3>Private<span class="pill">Most personal</span></h3>
+          <p>One-on-one coaching for the fastest progression</p>
+        </div>
+        <table>
+          <tr><td>1 instructor, 60 min</td><td>1,000,000 ₫</td></tr>
+          <tr><td>Duo (couples / friends), 60 min</td><td>800,000 ₫ /person</td></tr>
+        </table>
+        <div class="inc"><b>Includes:</b> soft-top board · rash guard · pop-up technique · ocean safety</div>
+      </div>
+      <div class="price-card">
+        <div class="head">
+          <h3>Group</h3>
+          <p>Small classes — meet other travelers on a wave</p>
+        </div>
+        <table>
+          <tr><td>Small group (4 people, 90 min)</td><td>700,000 ₫ /person</td></tr>
+          <tr><td>Intensive (4 people, 2 instructors, 60 min)</td><td>800,000 ₫ /person</td></tr>
+          <tr><td>Team building (8–10 people, custom)</td><td>Get a quote</td></tr>
+        </table>
+        <div class="inc"><b>Includes:</b> soft-top board · rash guard · pop-up technique · ocean safety</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rentals">
+  <div class="container">
+    <p class="eyebrow">Rentals</p>
+    <h2 class="h2">Already surf? Grab a Torq board.</h2>
+    <p class="sub">Every board in the rack is a Torq — same shaper used by Pulse pros. Soft-tops for beginners, epoxies and longboards for everyone else. Rash guard included with every rental.</p>
+
+    <div class="price-card" style="max-width: 760px;">
+      <table>
+        <tr><th>Board</th><th>1 h</th><th>3 h</th><th>24 h</th><th>+ day</th></tr>
+        <tr><td>Soft top <span style="font-size:11px;background:var(--warm-soft);color:var(--warm);padding:2px 8px;border-radius:8px;margin-left:4px;font-weight:700">most popular</span></td><td>150k ₫</td><td>250k ₫</td><td>600k ₫</td><td>300k ₫</td></tr>
+        <tr><td>Mold + epoxy / longboard</td><td>200k ₫</td><td>300k ₫</td><td>700k ₫</td><td>350k ₫</td></tr>
+        <tr><td>Body board / kayak / SUP / wetsuit</td><td colspan="4" style="color:var(--muted);text-align:left">100k – 750k ₫ depending on item</td></tr>
+      </table>
+      <div class="inc"><b>Includes:</b> rash guard · leash · wax. Showers and lockers on-site.</div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background: var(--bg-card);">
+  <div class="container">
+    <p class="eyebrow">More than surf</p>
+    <h2 class="h2">Same beach, more ways into the water.</h2>
+    <p class="sub">Diving, sailing, kayaking, paddling, coastal camping — all run by the same team. Ask about combo packages.</p>
+
+    <div class="tiles">
+      <div class="tile">
+        <img src="img/diving.jpg" alt="Diving">
+        <div class="body"><h4>Diving</h4><p>Recreational + safety-first instruction along My Khe and Son Tra reefs.</p></div>
+      </div>
+      <div class="tile">
+        <img src="img/kayak.jpg" alt="Kayaking">
+        <div class="body"><h4>Kayaking</h4><p>Calm-water exploration of the coastline. Beginner-friendly.</p></div>
+      </div>
+      <div class="tile">
+        <img src="img/paddle.jpg" alt="Paddling">
+        <div class="body"><h4>SUP + Paddle</h4><p>Stand-up paddling lessons and rentals. Sunrise sessions on request.</p></div>
+      </div>
+      <div class="tile">
+        <img src="img/sailing.jpg" alt="Sailing">
+        <div class="body"><h4>Sailing</h4><p>Crew up for a half-day on a coastal sailing trip.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <p class="eyebrow">What people say</p>
+    <h2 class="h2">293 reviews. 4.9 stars. Same two names.</h2>
+    <p class="sub">Every reviewer mentions Thai or Tu by name. The thing they keep coming back to isn't the boards or the price — it's how patient the team is when you're brand-new.</p>
+
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="t-stars">★ ★ ★ ★ ★</div>
+        <p class="q">"Sometimes in the morning, when it's a good surf, I go out there, and I don't feel like it's a bad world."</p>
+        <p class="who">Mia S — San Diego</p>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★ ★ ★ ★ ★</div>
+        <p class="q">"Learning to surf at Dana Surf with a Thai instructor was an incredible experience! Patient and knowledgeable, made the learning process enjoyable. Recommended for beginners."</p>
+        <p class="who">Ketton T — TripAdvisor, Oct 2025</p>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★ ★ ★ ★ ★</div>
+        <p class="q">"My instructor, Tu was incredibly informative, knowledgeable and patient, making it easy to learn and feel confident in the water."</p>
+        <p class="who">Google review</p>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★ ★ ★ ★ ★</div>
+        <p class="q">"All the boards are in great condition and really good prices, with many different sizes, volumes and shapes available — all boards are from brand Torq."</p>
+        <p class="who">Google review</p>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★ ★ ★ ★ ★</div>
+        <p class="q">"My wife and I had the best experience last week surfing for the first time! Thai made us feel safe from minute one."</p>
+        <p class="who">Ben M — San Diego</p>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★ ★ ★ ★ ★</div>
+        <p class="q">"The best thing about this rental place is Thai. He is so kind and helpful. The atmosphere is positive and fun for learning."</p>
+        <p class="who">Google review</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="container">
+    <p class="eyebrow">Find us</p>
+    <h2 class="h2">Opposite 268B Võ Nguyên Giáp.</h2>
+    <p class="sub">Right on the beach, between An Thượng and Sơn Trà. A 5-minute walk from anywhere in the An Thượng tourist district.</p>
+
+    <div class="loc-grid">
+      <div class="loc-map">
+        <iframe loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239.63!2d108.2475938!3d16.0556873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142173c047b0cbd%3A0xa9a27a329444c475!2sDANA%20surfrental!5e0!3m2!1sen!2s!4v1747165038200!5m2!1sen!2s"></iframe>
+      </div>
+      <div class="loc-card">
+        <h3>Dana Surf Rental</h3>
+        <div class="row">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>Opposite 268B Võ Nguyên Giáp,<br>Mỹ An, Sơn Trà, Đà Nẵng 550000</p>
+        </div>
+        <div class="row">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <p>Daily 7 AM – 5 PM</p>
+        </div>
+        <div class="row">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          <p><a href="tel:+84833289111" style="color: var(--accent); text-decoration: none; font-weight: 600;">+84 83 328 9111</a> &nbsp;·&nbsp; <a href="tel:+84839752552" style="color: var(--accent); text-decoration: none; font-weight: 600;">+84 839 752 552</a></p>
+        </div>
+        <div style="margin-top: 18px;">
+          <a class="btn btn-primary" href="https://maps.google.com/?cid=12223466696291435637" target="_blank" rel="noopener">Open in Google Maps →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>Dana Surf Rental</h4>
+      <p style="margin: 0 0 6px;">Opposite 268B Võ Nguyên Giáp, Mỹ An,<br>Sơn Trà, Đà Nẵng</p>
+      <p style="margin: 0;">Daily 7 AM – 5 PM</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p style="margin: 0 0 6px;"><a href="tel:+84833289111">+84 83 328 9111</a></p>
+      <p style="margin: 0 0 6px;"><a href="mailto:ngoquangthai1989@gmail.com">ngoquangthai1989@gmail.com</a></p>
+      <p style="margin: 0;"><a href="https://www.facebook.com/surfrental" target="_blank">Facebook</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/danasurfrental/" target="_blank">Instagram</a></p>
+    </div>
+  </div>
+  <div style="max-width: 1120px; margin: 28px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: #6b7280;">
+    © 2026 Dana Surf Rental. Made with ♥ at My Khe.
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a class="call" href="tel:+84833289111">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <a class="zalo" href="https://zalo.me/84833289111">
+    Zalo
+  </a>
+  <a class="whatsapp" href="https://wa.me/84833289111">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 14.2c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.3-1.4-.9-.7-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .2.2 2 3.1 4.9 4.4.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4 0-.1-.3-.2-.5-.3M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+</body>
+</html>
