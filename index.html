@@ -33,23 +33,28 @@
     --ink: #0e1217;
     --ink-soft: #3a414d;
     --muted: #6b7280;
-    --line: #e7eaef;
-    --line-soft: #f1f3f6;
-    --bg: #fafbfc;
+    --line: #ecdfd2;
+    --line-soft: #f5ebde;
+    --bg: #fcf6ee;
     --bg-card: #ffffff;
-    --accent: #0b6cf2;
-    --accent-dark: #0958c9;
+    --accent: #ff5f3f;
+    --accent-dark: #e84a2c;
+    --teal: #0eaab5;
+    --teal-soft: #e7f7f8;
     --warm: #f97316;
     --warm-soft: #fff4ec;
     --good: #15875a;
-    --shadow: 0 1px 2px rgba(15,18,24,0.05), 0 6px 18px rgba(15,18,24,0.06);
+    --shadow: 0 1px 2px rgba(80,40,20,0.05), 0 6px 18px rgba(80,40,20,0.08);
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body { margin: 0; color: var(--ink); font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Inter, system-ui, sans-serif; line-height: 1.55; font-size: 16px; background: var(--bg); -webkit-font-smoothing: antialiased; }
 
-  /* Language toggle */
-  [data-lang="en"] [lang="vi"], [data-lang="vi"] [lang="en"] { display: none; }
+  /* Language toggle — only show the active language */
+  [data-lang="en"] [lang]:not([lang="en"]),
+  [data-lang="vi"] [lang]:not([lang="vi"]),
+  [data-lang="ko"] [lang]:not([lang="ko"]),
+  [data-lang="ja"] [lang]:not([lang="ja"]) { display: none; }
 
   /* Nav */
   nav { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,0.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
@@ -63,16 +68,18 @@
   nav .lang-toggle { display: flex; gap: 4px; background: var(--line-soft); border-radius: 999px; padding: 3px; }
   nav .lang-toggle button { background: transparent; border: 0; padding: 5px 10px; font-size: 12px; font-weight: 700; color: var(--muted); border-radius: 999px; cursor: pointer; font-family: inherit; letter-spacing: 0.5px; }
   [data-lang="en"] nav .lang-toggle button[data-set-lang="en"],
-  [data-lang="vi"] nav .lang-toggle button[data-set-lang="vi"] { background: var(--bg-card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+  [data-lang="vi"] nav .lang-toggle button[data-set-lang="vi"],
+  [data-lang="ko"] nav .lang-toggle button[data-set-lang="ko"],
+  [data-lang="ja"] nav .lang-toggle button[data-set-lang="ja"] { background: var(--bg-card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
   nav .cta { background: var(--ink); color: #fff; text-decoration: none; padding: 9px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; }
   @media (max-width: 480px) { nav .cta { display: none; } }
 
   /* Hero */
-  .hero { position: relative; overflow: hidden; padding: 100px 24px 140px; background: linear-gradient(180deg, #fdfdfd 0%, #f5f7fb 100%); }
+  .hero { position: relative; overflow: hidden; padding: 100px 24px 140px; background: linear-gradient(180deg, #fff9f0 0%, #fceacf 100%); }
   .hero-inner { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
   @media (max-width: 880px) { .hero { padding: 56px 22px 80px; } .hero-inner { grid-template-columns: 1fr; gap: 36px; } }
   .hero h1 { font-size: 56px; line-height: 1.04; margin: 0 0 18px; letter-spacing: -0.025em; font-weight: 800; }
-  .hero h1 .accent { color: var(--accent); }
+  .hero h1 .accent { color: var(--teal); }
   @media (max-width: 880px) { .hero h1 { font-size: 38px; } }
   .hero p.lead { font-size: 19px; color: var(--ink-soft); margin: 0 0 32px; max-width: 540px; }
   @media (max-width: 880px) { .hero p.lead { font-size: 17px; } }
@@ -208,19 +215,21 @@
   <div class="wrap">
     <a class="brand" href="#top">Dana Surf Rental</a>
     <div class="links">
-      <a href="#lessons"><span lang="en">Lessons</span><span lang="vi">Khóa học</span></a>
-      <a href="#rentals"><span lang="en">Rentals</span><span lang="vi">Thuê ván</span></a>
-      <a href="#services"><span lang="en">Activities</span><span lang="vi">Hoạt động</span></a>
-      <a href="#gallery"><span lang="en">Gallery</span><span lang="vi">Hình ảnh</span></a>
-      <a href="#reviews"><span lang="en">Reviews</span><span lang="vi">Đánh giá</span></a>
-      <a href="#location"><span lang="en">Location</span><span lang="vi">Địa chỉ</span></a>
+      <a href="#lessons"><span lang="en">Lessons</span><span lang="vi">Khóa học</span><span lang="ko">수업</span><span lang="ja">レッスン</span></a>
+      <a href="#rentals"><span lang="en">Rentals</span><span lang="vi">Thuê ván</span><span lang="ko">보드 대여</span><span lang="ja">ボードレンタル</span></a>
+      <a href="#services"><span lang="en">Activities</span><span lang="vi">Hoạt động</span><span lang="ko">액티비티</span><span lang="ja">アクティビティ</span></a>
+      <a href="#gallery"><span lang="en">Gallery</span><span lang="vi">Hình ảnh</span><span lang="ko">갤러리</span><span lang="ja">ギャラリー</span></a>
+      <a href="#reviews"><span lang="en">Reviews</span><span lang="vi">Đánh giá</span><span lang="ko">리뷰</span><span lang="ja">レビュー</span></a>
+      <a href="#location"><span lang="en">Location</span><span lang="vi">Địa chỉ</span><span lang="ko">위치</span><span lang="ja">アクセス</span></a>
     </div>
     <div class="right">
       <div class="lang-toggle">
         <button data-set-lang="en" aria-label="English">EN</button>
         <button data-set-lang="vi" aria-label="Tiếng Việt">VI</button>
+        <button data-set-lang="ko" aria-label="한국어">KO</button>
+        <button data-set-lang="ja" aria-label="日本語">JA</button>
       </div>
-      <a class="cta" href="tel:+84833289111"><span lang="en">Call · book</span><span lang="vi">Gọi · đặt lịch</span></a>
+      <a class="cta" href="tel:+84833289111"><span lang="en">Call · book</span><span lang="vi">Gọi · đặt lịch</span><span lang="ko">전화 · 예약</span><span lang="ja">電話 · 予約</span></a>
     </div>
   </div>
 </nav>
@@ -238,10 +247,12 @@
       <h1 lang="vi">Học lướt sóng tại <span class="accent">Bãi biển Mỹ Khê</span>, Đà Nẵng.</h1>
       <p class="lead" lang="en">Daily lessons + board rentals on Da Nang's main beach. First-time or seasoned rider, 7 or 70 — the team gets you on a wave.</p>
       <p class="lead" lang="vi">Lớp học và cho thuê ván hằng ngày ngay trên bãi biển chính của Đà Nẵng. Người mới bắt đầu hay đã có kinh nghiệm, từ 7 đến 70 tuổi — đội ngũ chúng tôi sẽ giúp bạn lướt sóng.</p>
+  <p class="lead" lang="ko">다낭 메인 비치에서 매일 진행되는 수업과 보드 대여. 초보자든 숙련자든, 7세부터 70세까지 — 저희 팀이 파도 위로 모셔드립니다.</p>
+  <p class="lead" lang="ja">ダナンのメインビーチで毎日開催のレッスン＆ボードレンタル。初心者でも経験者でも、7歳から70歳まで — チームが必ず波に乗せます。</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#lessons" lang="en">Book a lesson — from 700k VND</a>
         <a class="btn btn-primary" href="#lessons" lang="vi">Đặt khóa học — từ 700k VND</a>
-        <a class="btn btn-ghost" href="tel:+84833289111"><span lang="en">Call +84 83 328 9111</span><span lang="vi">Gọi +84 83 328 9111</span></a>
+        <a class="btn btn-ghost" href="tel:+84833289111"><span lang="en">Call +84 83 328 9111</span><span lang="vi">Gọi +84 83 328 9111</span><span lang="ko">전화 +84 83 328 9111</span><span lang="ja">電話 +84 83 328 9111</span></a>
       </div>
     </div>
     <div class="hero-img-wrap">
@@ -260,14 +271,20 @@
     <div class="about-grid">
       <img class="about-img" src="img/thai.jpg" alt="Dana Surf Rental instructor with students at My Khe Beach">
       <div>
-        <p class="eyebrow"><span lang="en">Meet the team</span><span lang="vi">Đội ngũ của chúng tôi</span></p>
+        <p class="eyebrow"><span lang="en">Meet the team</span><span lang="vi">Đội ngũ của chúng tôi</span><span lang="ko">팀 소개</span><span lang="ja">チーム紹介</span></p>
         <h2 class="h2" lang="en">Surfing is for everyone.</h2>
         <h2 class="h2" lang="vi">Lướt sóng dành cho tất cả mọi người.</h2>
+  <h2 class="h2" lang="ko">서핑은 모두를 위한 것입니다.</h2>
+  <h2 class="h2" lang="ja">サーフィンはみんなのもの。</h2>
         <p class="sub" lang="en">Every lesson runs in English and Vietnamese, on Torq soft-tops sized to you, with on-land technique before you ever paddle out. The reviews speak for themselves.</p>
         <p class="sub" lang="vi">Mọi buổi học đều được dạy bằng cả tiếng Anh và tiếng Việt, trên ván mềm Torq vừa với người, với phần kỹ thuật trên cạn trước khi xuống nước. Hãy đọc đánh giá của khách hàng.</p>
+  <p class="sub" lang="ko">모든 수업은 영어와 베트남어로 진행되며, 체격에 맞는 Torq 소프트탑 보드를 사용하고, 바다에 나가기 전 육상에서 기술을 익힙니다. 리뷰가 모든 것을 말해줍니다.</p>
+  <p class="sub" lang="ja">全てのレッスンは英語とベトナム語で行い、体格に合ったTorqソフトトップを使用、海に出る前に陸上で技術を練習。レビューがすべてを物語っています。</p>
         <div class="quote-card">
           <p class="q" lang="en">"The best thing about this rental place is the instructor. So kind and helpful. They make you feel welcomed and happy from the moment you arrive — such a positive and fun atmosphere for learning."</p>
           <p class="q" lang="vi">"Điều tuyệt nhất ở đây là huấn luyện viên. Rất tử tế và nhiệt tình. Họ làm bạn cảm thấy được chào đón và vui vẻ ngay từ khi đến — một không khí rất tích cực và thú vị để học."</p>
+  <p class="q" lang="ko">"여기서 가장 좋은 점은 강사입니다. 정말 친절하고 도움이 됩니다. 도착하는 순간부터 환영받고 즐거운 기분이 들게 해줍니다 — 배우기에 정말 긍정적이고 재미있는 분위기입니다."</p>
+  <p class="q" lang="ja">"このお店の一番の魅力はインストラクターです。とても親切で頼りになります。到着した瞬間から歓迎されて楽しい気持ちにさせてくれます — 学ぶのにとても前向きで楽しい雰囲気です。"</p>
           <p class="who"><span lang="en">— Google review</span><span lang="vi">— Đánh giá Google</span></p>
         </div>
       </div>
@@ -277,11 +294,15 @@
 
 <section class="price-section" id="lessons">
   <div class="container">
-    <p class="eyebrow"><span lang="en">Lessons</span><span lang="vi">Khóa học</span></p>
+    <p class="eyebrow"><span lang="en">Lessons</span><span lang="vi">Khóa học</span><span lang="ko">수업</span><span lang="ja">レッスン</span></p>
     <h2 class="h2" lang="en">Pick a class, get on a wave.</h2>
     <h2 class="h2" lang="vi">Chọn lớp, lướt sóng ngay.</h2>
+  <h2 class="h2" lang="ko">수업을 선택하고 파도를 타세요.</h2>
+  <h2 class="h2" lang="ja">クラスを選んで、波に乗ろう。</h2>
     <p class="sub" lang="en">All lessons include a soft-top board, rash guard, on-land technique training (paddling + pop-up), wave + tide reading, and an ocean safety briefing. Open daily 7 AM – 5 PM.</p>
     <p class="sub" lang="vi">Tất cả khóa học bao gồm ván mềm, áo chống xước, hướng dẫn kỹ thuật trên cạn (chèo + đứng lên ván), đọc sóng + thủy triều, và phổ biến an toàn dưới biển. Mở cửa hằng ngày 7h – 17h.</p>
+  <p class="sub" lang="ko">모든 수업은 소프트탑 보드, 래시가드, 육상 기술 훈련 (패들링 + 팝업), 파도/조류 분석, 해양 안전 교육이 포함됩니다. 매일 오전 7시 – 오후 5시 영업.</p>
+  <p class="sub" lang="ja">全レッスンにソフトトップボード、ラッシュガード、陸上技術トレーニング（パドリング + ポップアップ）、波 + 潮流の読み方、海洋安全説明が含まれます。毎日朝7時〜夕方5時営業。</p>
 
     <div class="price-table-wrap">
       <div class="price-card">
@@ -292,10 +313,12 @@
           </h3>
           <p lang="en">One-on-one coaching for the fastest progression</p>
           <p lang="vi">Hướng dẫn 1 kèm 1, tiến bộ nhanh nhất</p>
+  <p lang="ko">가장 빠른 발전을 위한 1:1 코칭</p>
+  <p lang="ja">最速で上達する1対1コーチング</p>
         </div>
         <table>
-          <tr><td><span lang="en">1 instructor, 60 min</span><span lang="vi">1 huấn luyện viên, 60 phút</span></td><td>1,000,000 ₫</td></tr>
-          <tr><td><span lang="en">Duo (couples / friends), 60 min</span><span lang="vi">Cặp đôi / bạn bè, 60 phút</span></td><td>800,000 ₫ <span lang="en">/person</span><span lang="vi">/người</span></td></tr>
+          <tr><td><span lang="en">1 instructor, 60 min</span><span lang="vi">1 huấn luyện viên, 60 phút</span><span lang="ko">강사 1명, 60분</span><span lang="ja">インストラクター1名、60分</span></td><td>1,000,000 ₫</td></tr>
+          <tr><td><span lang="en">Duo (couples / friends), 60 min</span><span lang="vi">Cặp đôi / bạn bè, 60 phút</span><span lang="ko">듀오 (커플/친구), 60분</span><span lang="ja">ペア（カップル/友達）、60分</span></td><td>800,000 ₫ <span lang="en">/person</span><span lang="vi">/người</span><span lang="ko">/인</span><span lang="ja">/人</span></td></tr>
         </table>
         <div class="inc">
           <span lang="en"><b>Includes:</b> soft-top board · rash guard · pop-up technique · ocean safety</span>
@@ -307,11 +330,13 @@
           <h3><span lang="en">Group</span><span lang="vi">Nhóm</span></h3>
           <p lang="en">Small classes — meet other travelers on a wave</p>
           <p lang="vi">Lớp nhỏ — làm quen bạn mới trên sóng</p>
+  <p lang="ko">소규모 클래스 — 파도 위에서 다른 여행자들을 만나세요</p>
+  <p lang="ja">少人数クラス — 波の上で他の旅行者と出会おう</p>
         </div>
         <table>
-          <tr><td><span lang="en">Small group (4 people, 90 min)</span><span lang="vi">Nhóm nhỏ (4 người, 90 phút)</span></td><td>700,000 ₫ <span lang="en">/person</span><span lang="vi">/người</span></td></tr>
-          <tr><td><span lang="en">Intensive (4 people, 2 instructors, 60 min)</span><span lang="vi">Chuyên sâu (4 người, 2 huấn luyện viên, 60 phút)</span></td><td>800,000 ₫ <span lang="en">/person</span><span lang="vi">/người</span></td></tr>
-          <tr><td><span lang="en">Team building (8–10 people, custom)</span><span lang="vi">Team building (8–10 người, theo yêu cầu)</span></td><td><span lang="en">Get a quote</span><span lang="vi">Liên hệ báo giá</span></td></tr>
+          <tr><td><span lang="en">Small group (4 people, 90 min)</span><span lang="vi">Nhóm nhỏ (4 người, 90 phút)</span><span lang="ko">소그룹 (4인, 90분)</span><span lang="ja">少人数グループ（4名、90分）</span></td><td>700,000 ₫ <span lang="en">/person</span><span lang="vi">/người</span><span lang="ko">/인</span><span lang="ja">/人</span></td></tr>
+          <tr><td><span lang="en">Intensive (4 people, 2 instructors, 60 min)</span><span lang="vi">Chuyên sâu (4 người, 2 huấn luyện viên, 60 phút)</span><span lang="ko">집중 (4인, 강사 2명, 60분)</span><span lang="ja">集中（4名、インストラクター2名、60分）</span></td><td>800,000 ₫ <span lang="en">/person</span><span lang="vi">/người</span><span lang="ko">/인</span><span lang="ja">/人</span></td></tr>
+          <tr><td><span lang="en">Team building (8–10 people, custom)</span><span lang="vi">Team building (8–10 người, theo yêu cầu)</span><span lang="ko">팀빌딩 (8–10인, 맞춤)</span><span lang="ja">チームビルディング（8〜10名、カスタム）</span></td><td><span lang="en">Get a quote</span><span lang="vi">Liên hệ báo giá</span><span lang="ko">견적 문의</span><span lang="ja">見積もり</span></td></tr>
         </table>
         <div class="inc">
           <span lang="en"><b>Includes:</b> soft-top board · rash guard · pop-up technique · ocean safety</span>
@@ -324,34 +349,38 @@
 
 <section id="rentals">
   <div class="container">
-    <p class="eyebrow"><span lang="en">Rentals</span><span lang="vi">Thuê ván</span></p>
+    <p class="eyebrow"><span lang="en">Rentals</span><span lang="vi">Thuê ván</span><span lang="ko">보드 대여</span><span lang="ja">ボードレンタル</span></p>
     <h2 class="h2" lang="en">Already surf? Grab a Torq board.</h2>
     <h2 class="h2" lang="vi">Đã biết lướt? Lấy một chiếc Torq.</h2>
+  <h2 class="h2" lang="ko">이미 서핑하시나요? Torq 보드를 빌리세요.</h2>
+  <h2 class="h2" lang="ja">もう乗れる方は Torq ボードをどうぞ。</h2>
     <p class="sub" lang="en">Every board in the rack is a Torq. Soft-tops for beginners, epoxies and longboards for everyone else. Rash guard included with every rental.</p>
     <p class="sub" lang="vi">Mọi chiếc ván ở đây đều là Torq. Ván mềm cho người mới, epoxy và longboard cho mọi trình độ. Áo chống xước đi kèm mỗi lượt thuê.</p>
+  <p class="sub" lang="ko">랙에 있는 모든 보드는 Torq입니다. 초보자용 소프트탑, 그 외에는 에폭시와 롱보드. 모든 대여에 래시가드 포함.</p>
+  <p class="sub" lang="ja">ラックのすべてのボードはTorqです。初心者にはソフトトップ、それ以外にはエポキシとロングボード。すべてのレンタルにラッシュガード付き。</p>
 
     <div class="price-card" style="max-width: 760px;">
       <table>
         <tr>
-          <th><span lang="en">Board</span><span lang="vi">Loại ván</span></th>
+          <th><span lang="en">Board</span><span lang="vi">Loại ván</span><span lang="ko">보드</span><span lang="ja">ボード</span></th>
           <th>1 h</th><th>3 h</th><th>24 h</th>
-          <th><span lang="en">+ day</span><span lang="vi">+ ngày</span></th>
+          <th><span lang="en">+ day</span><span lang="vi">+ ngày</span><span lang="ko">+ 추가일</span><span lang="ja">+ 追加日</span></th>
         </tr>
         <tr>
           <td>
-            <span lang="en">Soft top </span><span lang="vi">Ván mềm </span>
+            <span lang="en">Soft top </span><span lang="vi">Ván mềm </span><span lang="ko">소프트탑 </span><span lang="ja">ソフトトップ </span>
             <span style="font-size:11px;background:var(--warm-soft);color:var(--warm);padding:2px 8px;border-radius:8px;margin-left:4px;font-weight:700">
-              <span lang="en">most popular</span><span lang="vi">phổ biến nhất</span>
+              <span lang="en">most popular</span><span lang="vi">phổ biến nhất</span><span lang="ko">인기</span><span lang="ja">人気</span>
             </span>
           </td>
           <td>150k ₫</td><td>250k ₫</td><td>600k ₫</td><td>300k ₫</td>
         </tr>
         <tr>
-          <td><span lang="en">Mold + epoxy / longboard</span><span lang="vi">Mold + epoxy / longboard</span></td>
+          <td><span lang="en">Mold + epoxy / longboard</span><span lang="vi">Mold + epoxy / longboard</span><span lang="ko">몰드 + 에폭시 / 롱보드</span><span lang="ja">モールド + エポキシ / ロングボード</span></td>
           <td>200k ₫</td><td>300k ₫</td><td>700k ₫</td><td>350k ₫</td>
         </tr>
         <tr>
-          <td><span lang="en">Body board / kayak / SUP / wetsuit</span><span lang="vi">Ván nằm / kayak / SUP / đồ ướt</span></td>
+          <td><span lang="en">Body board / kayak / SUP / wetsuit</span><span lang="vi">Ván nằm / kayak / SUP / đồ ướt</span><span lang="ko">바디보드 / 카약 / SUP / 웻수트</span><span lang="ja">ボディボード / カヤック / SUP / ウェットスーツ</span></td>
           <td colspan="4" style="color:var(--muted);text-align:left">
             <span lang="en">100k – 750k ₫ depending on item</span>
             <span lang="vi">100k – 750k ₫ tùy loại</span>
@@ -368,43 +397,55 @@
 
 <section id="services" style="background: var(--bg-card);">
   <div class="container">
-    <p class="eyebrow"><span lang="en">More than surf</span><span lang="vi">Không chỉ lướt sóng</span></p>
+    <p class="eyebrow"><span lang="en">More than surf</span><span lang="vi">Không chỉ lướt sóng</span><span lang="ko">서핑 외에도</span><span lang="ja">サーフィン以外も</span></p>
     <h2 class="h2" lang="en">Same beach, more ways into the water.</h2>
     <h2 class="h2" lang="vi">Cùng một bãi biển, nhiều cách xuống nước.</h2>
+  <h2 class="h2" lang="ko">같은 바다, 더 많은 즐기는 방법.</h2>
+  <h2 class="h2" lang="ja">同じビーチ、もっと多くの楽しみ方。</h2>
     <p class="sub" lang="en">Diving, sailing, kayaking, paddling, coastal camping — all run by the same team. Ask about combo packages.</p>
     <p class="sub" lang="vi">Lặn, thuyền buồm, kayak, SUP, cắm trại ven biển — đều do cùng đội ngũ vận hành. Hỏi về gói combo.</p>
+  <p class="sub" lang="ko">다이빙, 세일링, 카약, 패들링, 해변 캠핑 — 모두 같은 팀이 운영합니다. 콤보 패키지 문의 환영.</p>
+  <p class="sub" lang="ja">ダイビング、セーリング、カヤック、パドリング、海岸キャンプ — すべて同じチームが運営。コンボパッケージもお問い合わせください。</p>
 
     <div class="tiles">
       <div class="tile">
         <img src="img/diving.jpg" alt="Diving service">
         <div class="body">
-          <h4><span lang="en">Diving</span><span lang="vi">Lặn biển</span></h4>
+          <h4><span lang="en">Diving</span><span lang="vi">Lặn biển</span><span lang="ko">다이빙</span><span lang="ja">ダイビング</span></h4>
           <p lang="en">Recreational + safety-first instruction along My Khe and Son Tra reefs.</p>
           <p lang="vi">Lặn giải trí với đảm bảo an toàn, dọc rạn san hô Mỹ Khê và Sơn Trà.</p>
+  <p lang="ko">미케와 손짜 산호초를 따라 즐기는 레크리에이션 + 안전 우선 지도.</p>
+  <p lang="ja">ミーケーとソントラのサンゴ礁沿いでレクリエーション + 安全第一の指導。</p>
         </div>
       </div>
       <div class="tile">
         <img src="img/kayak.jpg" alt="Kayaking">
         <div class="body">
-          <h4><span lang="en">Kayaking</span><span lang="vi">Kayak</span></h4>
+          <h4><span lang="en">Kayaking</span><span lang="vi">Kayak</span><span lang="ko">카약</span><span lang="ja">カヤック</span></h4>
           <p lang="en">Calm-water exploration of the coastline. Beginner-friendly.</p>
           <p lang="vi">Khám phá ven biển trên nước yên ả. Phù hợp người mới.</p>
+  <p lang="ko">잔잔한 바다에서 해안선 탐험. 초보자 환영.</p>
+  <p lang="ja">穏やかな海で海岸線探検。初心者歓迎。</p>
         </div>
       </div>
       <div class="tile">
         <img src="img/paddle.jpg" alt="SUP / paddle">
         <div class="body">
-          <h4><span lang="en">SUP + Paddle</span><span lang="vi">SUP / chèo đứng</span></h4>
+          <h4><span lang="en">SUP + Paddle</span><span lang="vi">SUP / chèo đứng</span><span lang="ko">SUP + 패들</span><span lang="ja">SUP + パドル</span></h4>
           <p lang="en">Stand-up paddling lessons and rentals. Sunrise sessions on request.</p>
           <p lang="vi">Khóa học và thuê SUP. Có lịch bình minh theo yêu cầu.</p>
+  <p lang="ko">스탠드업 패들링 수업 및 대여. 일출 세션은 요청 시 가능.</p>
+  <p lang="ja">スタンドアップパドリングのレッスンとレンタル。日の出セッションはリクエスト対応。</p>
         </div>
       </div>
       <div class="tile">
         <img src="img/sailing.jpg" alt="Sailing">
         <div class="body">
-          <h4><span lang="en">Sailing</span><span lang="vi">Thuyền buồm</span></h4>
+          <h4><span lang="en">Sailing</span><span lang="vi">Thuyền buồm</span><span lang="ko">세일링</span><span lang="ja">セーリング</span></h4>
           <p lang="en">Crew up for a half-day on a coastal sailing trip.</p>
           <p lang="vi">Tham gia chuyến đi thuyền buồm ven biển nửa ngày.</p>
+  <p lang="ko">반나절 해안 세일링 여행에 합류하세요.</p>
+  <p lang="ja">半日の海岸セーリングツアーに参加しましょう。</p>
         </div>
       </div>
     </div>
@@ -413,11 +454,15 @@
 
 <section class="gallery-section" id="gallery">
   <div class="container">
-    <p class="eyebrow"><span lang="en">Gallery</span><span lang="vi">Hình ảnh</span></p>
+    <p class="eyebrow"><span lang="en">Gallery</span><span lang="vi">Hình ảnh</span><span lang="ko">갤러리</span><span lang="ja">ギャラリー</span></p>
     <h2 class="h2" lang="en">Real days, real students.</h2>
     <h2 class="h2" lang="vi">Những ngày thật, học viên thật.</h2>
+  <h2 class="h2" lang="ko">진짜 하루, 진짜 학생들.</h2>
+  <h2 class="h2" lang="ja">リアルな日々、リアルな生徒たち。</h2>
     <p class="sub" lang="en">Photos from our actual lessons + rentals at My Khe. No stock photos.</p>
     <p class="sub" lang="vi">Ảnh thật từ các buổi học và thuê ván tại Mỹ Khê. Không dùng ảnh stock.</p>
+  <p class="sub" lang="ko">미케에서 실제 수업 및 대여 사진. 스톡 사진 없음.</p>
+  <p class="sub" lang="ja">ミーケーでの実際のレッスンとレンタルの写真。ストック写真なし。</p>
 
     <div class="gallery">
       <div class="g g1"><img src="img/gallery-shop.jpg" alt="Dana Surf shop front with branded boards"></div>
@@ -434,48 +479,64 @@
 
 <section class="testimonials" id="reviews">
   <div class="container">
-    <p class="eyebrow"><span lang="en">What people say</span><span lang="vi">Khách hàng nói gì</span></p>
+    <p class="eyebrow"><span lang="en">What people say</span><span lang="vi">Khách hàng nói gì</span><span lang="ko">고객 후기</span><span lang="ja">お客様の声</span></p>
     <h2 class="h2" lang="en">293 reviews. 4.9 stars.</h2>
     <h2 class="h2" lang="vi">293 đánh giá. 4.9 sao.</h2>
+  <h2 class="h2" lang="ko">리뷰 293개. 별점 4.9.</h2>
+  <h2 class="h2" lang="ja">レビュー293件。星4.9。</h2>
     <p class="sub" lang="en">The thing reviewers keep coming back to isn't the boards or the price — it's how patient the team is when you're brand-new.</p>
     <p class="sub" lang="vi">Điều mà khách hàng nhắc nhiều nhất không phải là ván hay giá — mà là sự kiên nhẫn của đội ngũ với người mới bắt đầu.</p>
+  <p class="sub" lang="ko">리뷰어들이 계속 언급하는 것은 보드나 가격이 아닌 — 초보자에게도 인내심을 가지고 가르치는 팀입니다.</p>
+  <p class="sub" lang="ja">レビューで何度も言及されるのはボードや価格ではなく — 初心者にも辛抱強く接してくれるチームです。</p>
 
     <div class="t-grid">
       <div class="t-card">
         <div class="t-stars">★ ★ ★ ★ ★</div>
         <p class="q" lang="en">"Sometimes in the morning, when it's a good surf, I go out there, and I don't feel like it's a bad world."</p>
         <p class="q" lang="vi">"Có những buổi sáng sóng đẹp, tôi xuống bãi, và không còn thấy thế giới này tệ chút nào."</p>
+  <p class="q" lang="ko">"파도가 좋은 아침에는 바다에 나가서 세상이 그렇게 나쁘지만은 않다고 느껴요."</p>
+  <p class="q" lang="ja">"良い波の朝、海に出ると世界もそんなに悪くないと感じるんです。"</p>
         <p class="who">Mia S — San Diego</p>
       </div>
       <div class="t-card">
         <div class="t-stars">★ ★ ★ ★ ★</div>
         <p class="q" lang="en">"Learning to surf here was an incredible experience! Patient and knowledgeable instructor — made the whole process enjoyable. Recommended for beginners."</p>
         <p class="q" lang="vi">"Học lướt sóng ở đây thật tuyệt vời! Huấn luyện viên kiên nhẫn và am hiểu — quá trình học rất vui. Rất hợp với người mới."</p>
+  <p class="q" lang="ko">"여기서 서핑을 배운 건 정말 멋진 경험이었어요! 인내심 있고 박식한 강사 덕분에 전 과정이 즐거웠습니다. 초보자에게 추천."</p>
+  <p class="q" lang="ja">"ここでサーフィンを学んだのは素晴らしい経験でした！辛抱強く知識豊富なインストラクターのおかげで全ての過程が楽しかったです。初心者におすすめ。"</p>
         <p class="who">Ketton T — TripAdvisor, Oct 2025</p>
       </div>
       <div class="t-card">
         <div class="t-stars">★ ★ ★ ★ ★</div>
         <p class="q" lang="en">"My instructor was incredibly informative, knowledgeable and patient, making it easy to learn and feel confident in the water."</p>
         <p class="q" lang="vi">"Huấn luyện viên của tôi cực kỳ am hiểu, kiên nhẫn, giúp tôi học dễ và tự tin dưới nước."</p>
-        <p class="who"><span lang="en">Google review</span><span lang="vi">Đánh giá Google</span></p>
+  <p class="q" lang="ko">"강사님은 매우 박식하고 인내심 있었으며, 쉽게 배우고 물에서 자신감을 가질 수 있도록 해주셨어요."</p>
+  <p class="q" lang="ja">"インストラクターはとても知識豊富で辛抱強く、簡単に学べて水中で自信を持てるようにしてくれました。"</p>
+        <p class="who"><span lang="en">Google review</span><span lang="vi">Đánh giá Google</span><span lang="ko">구글 리뷰</span><span lang="ja">Googleレビュー</span></p>
       </div>
       <div class="t-card">
         <div class="t-stars">★ ★ ★ ★ ★</div>
         <p class="q" lang="en">"All the boards are in great condition and really good prices, with many different sizes, volumes and shapes — all boards are from brand Torq."</p>
         <p class="q" lang="vi">"Ván rất tốt và giá hợp lý, có nhiều kích thước và kiểu — tất cả đều là Torq."</p>
-        <p class="who"><span lang="en">Google review</span><span lang="vi">Đánh giá Google</span></p>
+  <p class="q" lang="ko">"모든 보드의 상태가 훌륭하고 가격도 합리적입니다. 다양한 사이즈, 볼륨, 모양이 있고 — 모두 Torq 브랜드입니다."</p>
+  <p class="q" lang="ja">"全てのボードが良い状態で価格もとてもお得。様々なサイズ、ボリューム、形があって — 全てTorqブランドです。"</p>
+        <p class="who"><span lang="en">Google review</span><span lang="vi">Đánh giá Google</span><span lang="ko">구글 리뷰</span><span lang="ja">Googleレビュー</span></p>
       </div>
       <div class="t-card">
         <div class="t-stars">★ ★ ★ ★ ★</div>
         <p class="q" lang="en">"My wife and I had the best experience last week surfing for the first time! Felt safe from minute one."</p>
         <p class="q" lang="vi">"Tuần trước vợ chồng tôi có buổi học lướt sóng đầu tiên tuyệt vời! Cảm thấy an toàn ngay từ phút đầu."</p>
+  <p class="q" lang="ko">"아내와 저는 지난주에 처음으로 서핑하면서 최고의 경험을 했어요! 1분 만에 안전하다고 느꼈습니다."</p>
+  <p class="q" lang="ja">"妻と私は先週初めてサーフィンして最高の体験をしました！1分目から安全だと感じました。"</p>
         <p class="who">Ben M — San Diego</p>
       </div>
       <div class="t-card">
         <div class="t-stars">★ ★ ★ ★ ★</div>
         <p class="q" lang="en">"The best thing about this rental place is the team. So kind and helpful. The atmosphere is positive and fun for learning."</p>
         <p class="q" lang="vi">"Điều tuyệt nhất ở đây là đội ngũ. Rất tử tế và nhiệt tình. Không khí tích cực và vui vẻ để học."</p>
-        <p class="who"><span lang="en">Google review</span><span lang="vi">Đánh giá Google</span></p>
+  <p class="q" lang="ko">"여기서 가장 좋은 점은 팀입니다. 너무 친절하고 도움이 됩니다. 배우기에 긍정적이고 재미있는 분위기예요."</p>
+  <p class="q" lang="ja">"このお店の一番の魅力はチームです。とても親切で頼りになります。学ぶのに前向きで楽しい雰囲気です。"</p>
+        <p class="who"><span lang="en">Google review</span><span lang="vi">Đánh giá Google</span><span lang="ko">구글 리뷰</span><span lang="ja">Googleレビュー</span></p>
       </div>
     </div>
   </div>
@@ -483,11 +544,15 @@
 
 <section id="location">
   <div class="container">
-    <p class="eyebrow"><span lang="en">Find us</span><span lang="vi">Tìm chúng tôi</span></p>
+    <p class="eyebrow"><span lang="en">Find us</span><span lang="vi">Tìm chúng tôi</span><span lang="ko">찾아오시는 길</span><span lang="ja">アクセス</span></p>
     <h2 class="h2" lang="en">Opposite 268B Võ Nguyên Giáp.</h2>
     <h2 class="h2" lang="vi">Đối diện 268B Võ Nguyên Giáp.</h2>
+  <h2 class="h2" lang="ko">268B Võ Nguyên Giáp 맞은편.</h2>
+  <h2 class="h2" lang="ja">268B Võ Nguyên Giáp の向かい。</h2>
     <p class="sub" lang="en">Right on the beach, between An Thượng and Sơn Trà. A 5-minute walk from anywhere in the An Thượng tourist district.</p>
     <p class="sub" lang="vi">Ngay trên bãi biển, giữa An Thượng và Sơn Trà. Đi bộ 5 phút từ bất cứ đâu trong khu An Thượng.</p>
+  <p class="sub" lang="ko">An Thượng과 Sơn Trà 사이, 해변 바로 옆. An Thượng 관광지구 어디에서나 도보 5분 거리.</p>
+  <p class="sub" lang="ja">An Thượng と Sơn Trà の間、ビーチのすぐ横。An Thượng 観光地区のどこからでも徒歩5分。</p>
 
     <div class="loc-grid">
       <div class="loc-map">
@@ -501,7 +566,7 @@
         </div>
         <div class="row">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <p><span lang="en">Daily 7 AM – 5 PM</span><span lang="vi">Hằng ngày 7h – 17h</span></p>
+          <p><span lang="en">Daily 7 AM – 5 PM</span><span lang="vi">Hằng ngày 7h – 17h</span><span lang="ko">매일 오전 7시 – 오후 5시</span><span lang="ja">毎日 朝7時 – 夕方5時</span></p>
         </div>
         <div class="row">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
@@ -523,24 +588,24 @@
     <div>
       <h4>Dana Surf Rental</h4>
       <p style="margin: 0 0 6px;">Opposite 268B Võ Nguyên Giáp, Mỹ An,<br>Sơn Trà, Đà Nẵng</p>
-      <p style="margin: 0;"><span lang="en">Daily 7 AM – 5 PM</span><span lang="vi">Hằng ngày 7h – 17h</span></p>
+      <p style="margin: 0;"><span lang="en">Daily 7 AM – 5 PM</span><span lang="vi">Hằng ngày 7h – 17h</span><span lang="ko">매일 오전 7시 – 오후 5시</span><span lang="ja">毎日 朝7時 – 夕方5時</span></p>
     </div>
     <div>
-      <h4><span lang="en">Contact</span><span lang="vi">Liên hệ</span></h4>
+      <h4><span lang="en">Contact</span><span lang="vi">Liên hệ</span><span lang="ko">연락처</span><span lang="ja">お問い合わせ</span></h4>
       <p style="margin: 0 0 6px;"><a href="tel:+84833289111">+84 83 328 9111</a></p>
       <p style="margin: 0 0 6px;"><a href="mailto:ngoquangthai1989@gmail.com">ngoquangthai1989@gmail.com</a></p>
       <p style="margin: 0;"><a href="https://www.facebook.com/surfrental" target="_blank">Facebook</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/danasurfrental/" target="_blank">Instagram</a></p>
     </div>
   </div>
   <div style="max-width: 1120px; margin: 28px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: #6b7280;">
-    © 2026 Dana Surf Rental. <span lang="en">Made with ♥ at My Khe.</span><span lang="vi">Làm với ♥ tại Mỹ Khê.</span>
+    © 2026 Dana Surf Rental. <span lang="en">Made with ♥ at My Khe.</span><span lang="vi">Làm với ♥ tại Mỹ Khê.</span><span lang="ko">미케에서 ♥로 만들었습니다.</span><span lang="ja">ミーケーで ♥ を込めて。</span>
   </div>
 </footer>
 
 <div class="sticky-cta">
   <a class="call" href="tel:+84833289111">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-    <span lang="en">Call</span><span lang="vi">Gọi</span>
+    <span lang="en">Call</span><span lang="vi">Gọi</span><span lang="ko">전화</span><span lang="ja">電話</span>
   </a>
   <a class="zalo" href="https://zalo.me/84833289111">Zalo</a>
   <a class="whatsapp" href="https://wa.me/84833289111">WhatsApp</a>
@@ -551,9 +616,13 @@
   var body = document.body;
   var saved = null;
   try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var SUPPORTED = ['en', 'vi', 'ko', 'ja'];
   var urlLang = new URLSearchParams(location.search).get('lang');
-  var initial = (urlLang === 'vi' || urlLang === 'en') ? urlLang
-    : saved || ((navigator.language || 'en').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en');
+  var browserLang = (navigator.language || 'en').toLowerCase().slice(0, 2);
+  var initial = (SUPPORTED.indexOf(urlLang) >= 0) ? urlLang
+    : (SUPPORTED.indexOf(saved) >= 0) ? saved
+    : (SUPPORTED.indexOf(browserLang) >= 0) ? browserLang
+    : 'en';
   setLang(initial);
   document.querySelectorAll('[data-set-lang]').forEach(function (b) {
     b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang')); });
